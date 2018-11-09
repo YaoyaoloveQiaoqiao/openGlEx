@@ -1,15 +1,14 @@
 //
-//  ViewController.h
+//  main.hpp
 //  openGLTest
 //
 //  Created by yaoyao on 2018/11/2.
 //  Copyright © 2018年 yaoyao. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#ifndef main_hpp
+#define main_hpp
 
-@interface ViewController : NSViewController
+#include <stdio.h>
 
-
-@end
-
+#endif /* main_hpp */
