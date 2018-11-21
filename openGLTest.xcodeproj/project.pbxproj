@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30822A9B21A578A400FF6995 /* image_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30822A9A21A578A400FF6995 /* image_loader.cpp */; };
+		30822AA221A5863C00FF6995 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30822AA121A5863C00FF6995 /* beauty.jpg */; };
 		309F09AD218BE2D100606B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 309F09AC218BE2D100606B67 /* Assets.xcassets */; };
 		309F09B0218BE2D100606B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309F09AE218BE2D100606B67 /* Main.storyboard */; };
 		309F09BB218BE2D100606B67 /* openGLTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 309F09BA218BE2D100606B67 /* openGLTestTests.m */; };
@@ -38,6 +40,10 @@
 /* Begin PBXFileReference section */
 		30822A912193D62F00FF6995 /* hello_triangle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hello_triangle.hpp; sourceTree = "<group>"; };
 		30822A952193D94900FF6995 /* hello_triangle_indexed.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hello_triangle_indexed.hpp; sourceTree = "<group>"; };
+		30822A98219A6B5000FF6995 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = "../../../../../Downloads/stb-master/stb_image.h"; sourceTree = "<group>"; };
+		30822A9A21A578A400FF6995 /* image_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = image_loader.cpp; sourceTree = "<group>"; };
+		30822A9D21A5791900FF6995 /* texture_ex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = texture_ex.hpp; sourceTree = "<group>"; };
+		30822AA121A5863C00FF6995 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beauty.jpg; path = ../../../../../Downloads/beauty.jpg; sourceTree = "<group>"; };
 		309F09A0218BE2D100606B67 /* openGLTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openGLTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309F09AC218BE2D100606B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		309F09AF218BE2D100606B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 		30822A8A2193D3F000FF6995 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				30822A9921A577CC00FF6995 /* 1.2.texture */,
 				30822A932193D90700FF6995 /* 1.2.2.hello_triangle_indexed */,
 				30822A8F2193D5FE00FF6995 /* 1.2.1.hello_triangle */,
 			);
@@ -109,6 +116,17 @@
 				30822A952193D94900FF6995 /* hello_triangle_indexed.hpp */,
 			);
 			name = 1.2.2.hello_triangle_indexed;
+			sourceTree = "<group>";
+		};
+		30822A9921A577CC00FF6995 /* 1.2.texture */ = {
+			isa = PBXGroup;
+			children = (
+				30822AA121A5863C00FF6995 /* beauty.jpg */,
+				30822A98219A6B5000FF6995 /* stb_image.h */,
+				30822A9A21A578A400FF6995 /* image_loader.cpp */,
+				30822A9D21A5791900FF6995 /* texture_ex.hpp */,
+			);
+			name = 1.2.texture;
 			sourceTree = "<group>";
 		};
 		309F0997218BE2D100606B67 = {
@@ -292,6 +310,7 @@
 			files = (
 				309F09AD218BE2D100606B67 /* Assets.xcassets in Resources */,
 				309F09B0218BE2D100606B67 /* Main.storyboard in Resources */,
+				30822AA221A5863C00FF6995 /* beauty.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				309F09DA218BE8DF00606B67 /* main.cpp in Sources */,
+				30822A9B21A578A400FF6995 /* image_loader.cpp in Sources */,
 				309F09D7218BE8BD00606B67 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
