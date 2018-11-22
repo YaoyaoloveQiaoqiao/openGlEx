@@ -5,11 +5,13 @@
 #include "hello_triangle.hpp"
 #include "hello_triangle_indexed.hpp"
 #include "texture_ex.cpp"
+#include "switch_first.cpp"
 
 
 int main(int argc, char **argv){
     //normalTriangle();
     //indicesRectangle();
-    textureBeauty();
+    //textureBeauty();
+    transformEx();
 }
     

@@ -44,6 +44,7 @@
 		30822A9A21A578A400FF6995 /* image_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = image_loader.cpp; sourceTree = "<group>"; };
 		30822A9D21A5791900FF6995 /* texture_ex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = texture_ex.hpp; sourceTree = "<group>"; };
 		30822AA121A5863C00FF6995 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beauty.jpg; path = ../../../../../Downloads/beauty.jpg; sourceTree = "<group>"; };
+		30822AA621A63D4900FF6995 /* switch_first.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = switch_first.hpp; sourceTree = "<group>"; };
 		309F09A0218BE2D100606B67 /* openGLTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openGLTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309F09AC218BE2D100606B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		309F09AF218BE2D100606B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		30822A8A2193D3F000FF6995 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				30822AA421A63D1100FF6995 /* 1.3.switch */,
 				30822A9921A577CC00FF6995 /* 1.2.texture */,
 				30822A932193D90700FF6995 /* 1.2.2.hello_triangle_indexed */,
 				30822A8F2193D5FE00FF6995 /* 1.2.1.hello_triangle */,
@@ -127,6 +129,14 @@
 				30822A9D21A5791900FF6995 /* texture_ex.hpp */,
 			);
 			name = 1.2.texture;
+			sourceTree = "<group>";
+		};
+		30822AA421A63D1100FF6995 /* 1.3.switch */ = {
+			isa = PBXGroup;
+			children = (
+				30822AA621A63D4900FF6995 /* switch_first.hpp */,
+			);
+			name = 1.3.switch;
 			sourceTree = "<group>";
 		};
 		309F0997218BE2D100606B67 = {

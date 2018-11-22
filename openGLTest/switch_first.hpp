@@ -11,36 +11,42 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include "stb_image.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 
-const char *vertexShaderSourceTexture = "#version 330 core\n"
-"layout (location = 0) in vec3 aPos;\n"
-"layout (location = 1) in vec3 aColor;\n"
-"layout (location = 2) in vec2 aTexCoord;\n"
-"out vec3 ourColor;\n"
-"out vec2 TexCoord;\n"
-"void main()\n"
-"{\n"
-"   gl_Position = vec4(aPos, 1.0);\n"
-"   ourColor = aColor;\n"
-"   TexCoord = aTexCoord;\n"
-"}\0";
-const char *fragmentShaderSourceTexture = "#version 330 core\n"
-"out vec4 FragColor;\n"
-"in vec3 ourColor;\n"
-"in vec2 TexCoord;\n"
-"uniform sampler2D ourTexture;\n"
-"void main()\n"
-"{\n"
-"   FragColor = texture(ourTexture, TexCoord);\n"
-"}\n\0";
+//void Shader::setMat4(const std::string& name, float value[]) const {
+//    glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, value);
+//}
+//const char *vertexShaderSourceTexture = "#version 330 core\n"
+//"layout (location = 0) in vec3 aPos;\n"
+//"layout (location = 1) in vec3 aColor;\n"
+//"layout (location = 2) in vec2 aTexCoord;\n"
+//"out vec3 ourColor;\n"
+//"out vec2 TexCoord;\n"
+//"void main()\n"
+//"{\n"
+//"   gl_Position = vec4(aPos, 1.0);\n"
+//"   ourColor = aColor;\n"
+//"   TexCoord = aTexCoord;\n"
+//"}\0";
+//const char *fragmentShaderSourceTexture = "#version 330 core\n"
+//"out vec4 FragColor;\n"
+//"in vec3 ourColor;\n"
+//"in vec2 TexCoord;\n"
+//"uniform sampler2D ourTexture;\n"
+//"void main()\n"
+//"{\n"
+//"   FragColor = texture(ourTexture, TexCoord);\n"
+//"}\n\0";
 
 // settings
 
 
-int textureBeauty(){
+int transformEx(){
     using std::cout;    using std::endl;
     glfwInit();
     //    主版本
@@ -81,6 +87,13 @@ int textureBeauty(){
     //    对于视网膜屏 Retain 屏   宽度和高度明显比原输入值更高一点。
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     
+    
+    //Test
+    glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
+    glm::mat4 trans;
+    trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));  //从这里就能看出单位矩阵的作用了。初始化的trans是一个单位矩阵，让它平移到(1.0f, 1.0f, 0.0f)的位置产生了一个平移矩阵。
+    vec = trans * vec;
+    std::cout << "(" << vec.x << "," << vec.y << "," << vec.z << ")" << std::endl;
     
     //build and compile shader program
     //--------------------------------
@@ -180,6 +193,10 @@ int textureBeauty(){
         std::cout << "aa" << std::endl;
     stbi_image_free(data);
     
+    glm::mat4 trans1;
+    trans = glm::scale(trans1, glm::vec3(0.5f, 0.5f, 0.5f));
+    trans = glm::rotate(trans1, /*glm::radians(90.0f)*/(float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+    
     // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     
@@ -193,7 +210,7 @@ int textureBeauty(){
     
     
     
-
+    
     void processInput(GLFWwindow *window);
     
     //   为了防止 渲染的图像一出现就退出 我们使用while 循环 。我们可以称之为Render Loop
@@ -207,7 +224,8 @@ int textureBeauty(){
         //        我们可以使用glClear   GL_COLOR_BUFFER_BIT，GL_DEPTH_BUFFER_BIT和GL_STENCIL_BUFFER_BIT。 我们清空颜色 。
         glClearColor(0.5f, 0.1f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        
+        glUniformMatrix4fv(glGetUniformLocation(ID, "transform"), 1, GL_FALSE, glm::value_ptr(trans1));
+
         // draw our first triangle
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
