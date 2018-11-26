@@ -18,6 +18,11 @@
 		309F09DA218BE8DF00606B67 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309F09D8218BE8DF00606B67 /* main.cpp */; };
 		309F09E0218FD67E00606B67 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 309F09DF218FD67E00606B67 /* libGLEW.2.1.0.dylib */; };
 		309F09E2218FD69500606B67 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 309F09E1218FD69500606B67 /* libglfw.3.2.dylib */; };
+		40E9527521A956A000B5C0C7 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9527421A956A000B5C0C7 /* beauty.jpg */; };
+		40E9527721A9825500B5C0C7 /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E9527621A9825500B5C0C7 /* face.png */; };
+		40E9527A21A98A2500B5C0C7 /* Yao.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 40E9527821A98A2500B5C0C7 /* Yao.cpp */; };
+		40E9528021AAF33800B5C0C7 /* 4.2.texture.fs in Resources */ = {isa = PBXBuildFile; fileRef = 40E9527E21AAF33700B5C0C7 /* 4.2.texture.fs */; };
+		40E9528121AAF33800B5C0C7 /* 4.2.texture.vs in Resources */ = {isa = PBXBuildFile; fileRef = 40E9527F21AAF33800B5C0C7 /* 4.2.texture.vs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,13 @@
 		309F09DD218FD27D00606B67 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		309F09DF218FD67E00606B67 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 		309F09E1218FD69500606B67 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		40E9527421A956A000B5C0C7 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beauty.jpg; path = ../../../../../Downloads/beauty.jpg; sourceTree = "<group>"; };
+		40E9527621A9825500B5C0C7 /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = face.png; path = ../../../../../Desktop/face.png; sourceTree = "<group>"; };
+		40E9527821A98A2500B5C0C7 /* Yao.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Yao.cpp; sourceTree = "<group>"; };
+		40E9527921A98A2500B5C0C7 /* Yao.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Yao.hpp; sourceTree = "<group>"; };
+		40E9527C21AAEC7800B5C0C7 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
+		40E9527E21AAF33700B5C0C7 /* 4.2.texture.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = 4.2.texture.fs; path = ../../LearnOpenGL/src/1.getting_started/4.2.textures_combined/4.2.texture.fs; sourceTree = "<group>"; };
+		40E9527F21AAF33800B5C0C7 /* 4.2.texture.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = 4.2.texture.vs; path = ../../LearnOpenGL/src/1.getting_started/4.2.textures_combined/4.2.texture.vs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,10 +135,16 @@
 		30822A9921A577CC00FF6995 /* 1.2.texture */ = {
 			isa = PBXGroup;
 			children = (
+				40E9527E21AAF33700B5C0C7 /* 4.2.texture.fs */,
+				40E9527F21AAF33800B5C0C7 /* 4.2.texture.vs */,
+				40E9527621A9825500B5C0C7 /* face.png */,
 				30822AA121A5863C00FF6995 /* beauty.jpg */,
 				30822A98219A6B5000FF6995 /* stb_image.h */,
 				30822A9A21A578A400FF6995 /* image_loader.cpp */,
 				30822A9D21A5791900FF6995 /* texture_ex.hpp */,
+				40E9527821A98A2500B5C0C7 /* Yao.cpp */,
+				40E9527921A98A2500B5C0C7 /* Yao.hpp */,
+				40E9527C21AAEC7800B5C0C7 /* Shader.hpp */,
 			);
 			name = 1.2.texture;
 			sourceTree = "<group>";
@@ -163,6 +181,7 @@
 		309F09A2218BE2D100606B67 /* openGLTest */ = {
 			isa = PBXGroup;
 			children = (
+				40E9527421A956A000B5C0C7 /* beauty.jpg */,
 				30822A8A2193D3F000FF6995 /* src */,
 				309F09D6218BE8BD00606B67 /* glad.c */,
 				309F09AC218BE2D100606B67 /* Assets.xcassets */,
@@ -319,8 +338,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				309F09AD218BE2D100606B67 /* Assets.xcassets in Resources */,
+				40E9527721A9825500B5C0C7 /* face.png in Resources */,
+				40E9528021AAF33800B5C0C7 /* 4.2.texture.fs in Resources */,
 				309F09B0218BE2D100606B67 /* Main.storyboard in Resources */,
 				30822AA221A5863C00FF6995 /* beauty.jpg in Resources */,
+				40E9527521A956A000B5C0C7 /* beauty.jpg in Resources */,
+				40E9528121AAF33800B5C0C7 /* 4.2.texture.vs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				309F09DA218BE8DF00606B67 /* main.cpp in Sources */,
+				40E9527A21A98A2500B5C0C7 /* Yao.cpp in Sources */,
 				30822A9B21A578A400FF6995 /* image_loader.cpp in Sources */,
 				309F09D7218BE8BD00606B67 /* glad.c in Sources */,
 			);
