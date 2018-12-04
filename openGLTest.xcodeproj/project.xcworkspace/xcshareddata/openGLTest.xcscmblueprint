@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E3AF72B351B0E930CB719454472D2A3EEBAD328E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E3AF72B351B0E930CB719454472D2A3EEBAD328E" : 9223372036854775807,
+    "63FCD87B8482FEC774376488E8D5236C161F3D37" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D6020793-05E1-4A19-BA16-5B1E82A6E76B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E3AF72B351B0E930CB719454472D2A3EEBAD328E" : "openGLTest\/",
+    "63FCD87B8482FEC774376488E8D5236C161F3D37" : "..\/LearnOpenGL"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "openGLTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "openGLTest.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/JoeyDeVries\/LearnOpenGL.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "63FCD87B8482FEC774376488E8D5236C161F3D37"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/YaoyaoloveQiaoqiao\/openGlEx.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E3AF72B351B0E930CB719454472D2A3EEBAD328E"
+    }
+  ]
+}

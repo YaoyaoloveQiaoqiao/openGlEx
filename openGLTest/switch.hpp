@@ -1,10 +1,13 @@
 //
-//  hello_triangle_indexed.hpp
+//  switch.hpp
 //  openGLTest
 //
-//  Created by yaoyao on 2018/11/8.
+//  Created by yaoyao on 2018/11/28.
 //  Copyright © 2018年 yaoyao. All rights reserved.
 //
+
+#ifndef switch_hpp
+#define switch_hpp
 
 #include <stdio.h>
 #include <iostream>
@@ -12,6 +15,9 @@
 #include <GLFW/glfw3.h>
 #include "stb_image.h"
 #include "Shader.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
@@ -19,7 +25,7 @@ void processInput(GLFWwindow *window);
 // settings
 
 
-int textureBeauty(){
+int switchRrund(){
     using std::cout;    using std::endl;
     glfwInit();
     //    主版本
@@ -80,6 +86,10 @@ int textureBeauty(){
         0, 1, 3,
         1, 2, 3
     };
+    
+    glm::mat4 trans;
+    trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
+    trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
     
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);
@@ -151,7 +161,7 @@ int textureBeauty(){
     ourShader.use(); // 别忘记在激活着色器前先设置uniform！
     glUniform1i(glGetUniformLocation(ourShader.ID, "texture"), 0); // 手动设置
     ourShader.setInt("texture2", 1); // 或者使用着色器类设置
-
+    
     //fragmentShader.setInt("texture2", 1); // 或者使用着色器类设置
     // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -166,7 +176,7 @@ int textureBeauty(){
     
     
     
-
+    
     void processInput(GLFWwindow *window);
     
     //   为了防止 渲染的图像一出现就退出 我们使用while 循环 。我们可以称之为Render Loop
@@ -181,11 +191,31 @@ int textureBeauty(){
         glClearColor(0.5f, 0.1f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
+        //ourShader.setMat4("transform", glm::value_ptr(trans));
+        
         // bind textures on corresponding texture units
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
+        
+        
+        // create transformations
+        
+        glm::mat4 transform;
+        transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
+        transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+        
+//        glm::mat4 transform;
+//        transform = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
+//        transform = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
+        
+        
+        // get matrix's uniform location and set matrix
+        ourShader.use();
+        unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
+        
         
         // draw our first triangle
         glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
@@ -222,3 +252,5 @@ int textureBeauty(){
 
 
 
+
+#endif /* switch_hpp */

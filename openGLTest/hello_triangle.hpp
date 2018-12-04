@@ -12,7 +12,7 @@
 #include <GLFW/glfw3.h>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow *window);
+//void processInput(GLFWwindow *window);
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -184,7 +184,7 @@ int normalTriangle(){
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     
     
-    void processInput(GLFWwindow *window);
+    //void processInput(GLFWwindow *window);
     
     
     
@@ -193,7 +193,7 @@ int normalTriangle(){
     while(!glfwWindowShouldClose(window))
     {
         //输出控制
-        processInput(window);
+        //processInput(window);
         //        glfwSwapBuffers 会交换颜色缓冲（他是存储着GLFW 窗口每一个像素色值的大缓冲），将会作为输出显示在屏幕上
         //        当程序退出的时候 使用一个自定义的颜色清空屏幕  在每个新的渲染迭代可是的时候我们总希望清屏否则总是看到上次渲染的结果。
         //        我们可以使用glClear   GL_COLOR_BUFFER_BIT，GL_DEPTH_BUFFER_BIT和GL_STENCIL_BUFFER_BIT。 我们清空颜色 。
@@ -232,10 +232,10 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }
-void processInput(GLFWwindow *window)
-{
-    //
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-}
+//void processInput(GLFWwindow *window)
+//{
+//    //
+//    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+//        glfwSetWindowShouldClose(window, true);
+//}
 
