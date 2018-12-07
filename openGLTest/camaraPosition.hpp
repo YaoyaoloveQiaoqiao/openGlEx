@@ -86,7 +86,8 @@ int camarePosition(){
     //   通过 glfwSetFramebufferSizeCallback glfw 函数 当窗口frame 变化时会调用。
     //    对于视网膜屏 Retain 屏   宽度和高度明显比原输入值更高一点。
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    
+    glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetScrollCallback(window, scroll_callback);
     // configure global opengl state
     // -----------------------------
     glEnable(GL_DEPTH_TEST);
@@ -337,8 +338,6 @@ void processInput(GLFWwindow *window)
     
     float cameraSpeed = 2.5 * deltaTime;
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS){
-        std::cout << "wwwwwwww" << std::endl;
-
         cameraPos += cameraSpeed * cameraFront;
 
     }
